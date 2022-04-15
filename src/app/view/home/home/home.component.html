@@ -1,0 +1,49 @@
+<section class="home">
+  <div class="row">
+    <div class="card" *ngFor="let item of items; let i = index">
+      <img [src]="item.image" class="img_top" />
+
+      <div class="card_body">
+        <div class="title_card">
+          {{ item.title }}
+        </div>
+
+        <div class="cost">
+          <div class="price">£ {{ item.price }}</div>
+          <div class="vat">incl. VAT</div>
+        </div>
+      </div>
+      <div class="setting" (click)="trigger(item, i)">
+        <img class="icon" src="assets/430115_configuration_settings_icon.svg" />
+      </div>
+
+      <div class="list" [ngClass]="{ active: item.active }">
+        <div class="list-item">
+          <img
+            class="img-fluid"
+            src="assets/430115_configuration_settings_icon.svg"
+          />
+          <div class="text">Edit</div>
+        </div>
+        <div class="list-item">
+          <img
+            class="img-fluid"
+            src="assets/115762_calendar_date_event_month_icon.svg"
+          />
+          <div class="text">Availability</div>
+        </div>
+        <div class="list-item">
+          <img
+            class="img-fluid"
+            src="assets/309054_lock_privacy_private_protect_icon.svg"
+          />
+          <div class="text">Make private</div>
+        </div>
+        <div class="list-item">
+          <img class="img-fluid" src="assets/211934_trash_icon.svg" />
+          <div class="text">Delete</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
